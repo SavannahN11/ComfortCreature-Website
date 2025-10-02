@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creature Comfort - My Animals</title>
+
+  <!-- External CSS link -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts (Jua) -->
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  
+  <!-- Internal CSS -->
+  <style>
+    h1 {
+      text-align: center;
+      color: #2b3d3a;
+      font-family: 'Jua', sans-serif;
+    }
+    .pet-card {
+      border: 2px solid #d3d3d3;
+      border-radius: 12px;
+      padding: 10px;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      background-color: #eaf5f4;
+    }
+    .pet-card img {
+      border-radius: 8px;
+      margin-right: 12px;
+      width: 100px;
+      height: 100px;
+    }
+    .add-pet {
+      border: 2px solid #d3d3d3;
+      border-radius: 12px;
+      padding: 15px;
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body style="background-color:#b7cbbf;"> <!-- Inline CSS -->
+
+  <!-- Header with Logo, Navigation, and Login Button -->
+  <header class="site-header">
+    <div class="logo">
+      <img src="CreatureComfort Logo.png" alt="Creature Comfort Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a><br><img src="paw-print.png" alt="Paw Print" class="paw-icon"></li>
+        <li><a href="#">My Animals</a><br><img src="paw-print.png" alt="Paw Print" class="paw-icon"></li>
+        <li><a href="#">Care Guide</a><br><img src="paw-print.png" alt="Paw Print" class="paw-icon"></li>
+        <li><a href="#">Service Finder</a><br><img src="paw-print.png" alt="Paw Print" class="paw-icon"></li>
+        <li><a href="#">Shop & Resources</a><br><img src="paw-print.png" alt="Paw Print" class="paw-icon"></li>
+        <li><a href="#">Survey</a><br><img src="paw-print.png" alt="Paw Print" class="paw-icon"></li>
+      </ul>
+    </nav>
+    <button class="login-btn">Login</button>
+  </header>
+
+  <!-- Page Title -->
+  <h1>My Animals</h1>
+
+  <!-- Pet Profiles -->
+  <section>
+    <h2>Pet Profiles</h2>
+    
+    <div class="pet-card">
+      <img src="Dog picture - ITEC 362 Website.jpg" alt="Dog">
+      <div class="pet-info">
+        <h3>Lincoln</h3>
+        <p><strong>Species:</strong> Dog</p>
+        <p><strong>Diet:</strong> Kibble every AM and PM</p>
+        <p><strong>Notes:</strong> Favors females over males, tends to have allergies in the spring.</p>
+      </div>
+      <button class="health-log-btn">Health Log</button>
+    </div>
+
+    <div class="pet-card">
+      <img src="Cat picture - ITEC 362 Website.jpg" alt="Cat">
+      <div class="pet-info">
+        <h3>Charlie</h3>
+        <p><strong>Species:</strong> Cat</p>
+        <p><strong>Diet:</strong> Dry Food & Wet Food everyday</p>
+        <p><strong>Notes:</strong> Takes lots of naps.</p>
+      </div>
+      <button class="health-log-btn">Health Log</button>
+    </div>
+
+    <div class="pet-card">
+      <img src="Fish picture - ITEC 362 Website.jpg" alt="Fish">
+      <div class="pet-info">
+        <h3>Goldie</h3>
+        <p><strong>Species:</strong> Fish</p>
+        <p><strong>Diet:</strong> Fish food once in the AM</p>
+        <p><strong>Notes:</strong> Very easy to take care of.</p>
+      </div>
+      <button class="health-log-btn">Health Log</button>
+    </div>
+  </section>
+
+  <!-- Add Pet Form -->
+  <aside class="add-pet">
+    <h3>Add Pet</h3>
+    <form>
+      <label>Pet Name:<br><input type="text" name="name"></label><br><br>
+      <label>Species:<br><input type="text" name="species"></label><br><br>
+      <label>Date of Birth:<br><input type="date" name="dob"></label><br><br>
+      <label>Diet:<br><input type="text" name="diet"></label><br><br>
+      <label>Notes:<br><textarea name="notes"></textarea></label><br><br>
+      <label>Enter photo:<br><input type="file" name="photo"></label><br><br>
+      <button type="submit">Add New Pet</button>
+    </form>
+  </aside>
+
+  <!-- Footer -->
+  <footer>
+    <p>Copyright ©2025 CreatureComfort.Inc</p>
+    <p>Email Us :) | Legal Stuff | Privacy Policy</p>
+  </footer>
+
+</body>
+</html>
