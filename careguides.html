@@ -6,53 +6,56 @@
   <title>Creature Comfort - Care Guides</title>
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Optional inline CSS — move to styles.css if you prefer -->
+  <!-- Inline styling for bigger, full-width cards -->
   <style>
     .animal-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      justify-items: center;
+      margin: 40px auto;
+      max-width: 1200px;
+      padding: 0 20px;
     }
 
     .animal-card {
-      width: 220px;
-      border-radius: 8px;
-      overflow: hidden;
-      background: #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
       text-decoration: none;
       color: inherit;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      width: 100%;
+      max-width: 320px;
       cursor: pointer;
     }
 
     .animal-card img {
       width: 100%;
-      height: 140px;
+      height: 250px; /* bigger images */
       object-fit: cover;
       display: block;
     }
 
     .animal-card p {
-      margin: 12px 8px 16px;
+      margin: 12px 0 20px;
       font-weight: 700;
+      font-size: 1.1rem;
     }
 
     .animal-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
     }
-
-    /* keep clickable area full-card when using anchors */
-    .animal-card > * { pointer-events: none; }
-    .animal-card[href] { pointer-events: auto; } /* anchors catch clicks */
   </style>
 </head>
 <body>
-  <!-- Header (reuse same header from index.html) -->
+  <!-- Header -->
   <header class="site-header">
     <div class="logo">
       <img src="logo.png" alt="Creature Comfort Logo" />
@@ -63,7 +66,6 @@
       <a href="careguides.html">Care Guide</a>
       <a href="survey.html">Survey</a>
     </nav>
-
     <button class="login-btn">Login</button>
   </header>
 
@@ -81,7 +83,7 @@
       <button class="search-btn">🔍</button>
     </div>
 
-    <!-- Animal grid (clean, single container) -->
+    <!-- Animal Cards -->
     <div class="animal-grid">
       <a class="animal-card" href="https://youtu.be/u2DDVm7MztE?si=LjK5IxGoFo5aGHKz" target="_blank" rel="noopener">
         <img src="snake.jpg" alt="Ball Python" />
@@ -126,35 +128,18 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-left">
       <img src="logo.png" alt="Creature Comfort Logo" />
     </div>
-
     <p>© 2025 CreatureComfort, Inc</p>
-
     <a href="mailto:info@creaturecomfort.com">Email Us :)</a>
     <a href="#">Legal Stuff</a>
     <a href="#">Privacy Policy</a>
   </footer>
 
-  <!-- optional JS fallback if anchor clicks are blocked by other scripts -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('.animal-card').forEach(card => {
-        // anchors will handle clicks — this is purely a fallback when card is clicked
-        // but the click target isn't the anchor (rare)
-        card.addEventListener('click', function(e) {
-          const anchor = card.closest('a') || card.querySelector('a[href]');
-          if (!anchor) return;
-          // if the native anchor already handled it (click on anchor), do nothing
-          if (e.target.closest('a')) return;
-          window.open(anchor.href, '_blank', 'noopener');
-        });
-      });
-    });
-  </script>
-
   <script src="slideshow.js"></script>
 </body>
 </html>
+
