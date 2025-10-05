@@ -1,22 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Creature Comfort - Care Guides</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Optional inline CSS — move to styles.css if you prefer -->
+  <style>
+    .animal-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .animal-card {
+      width: 220px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      text-align: center;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    .animal-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .animal-card p {
+      margin: 12px 8px 16px;
+      font-weight: 700;
+    }
+
+    .animal-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    }
+
+    /* keep clickable area full-card when using anchors */
+    .animal-card > * { pointer-events: none; }
+    .animal-card[href] { pointer-events: auto; } /* anchors catch clicks */
+  </style>
 </head>
 <body>
   <!-- Header (reuse same header from index.html) -->
- <header class="site-header">
+  <header class="site-header">
     <div class="logo">
-      <img src="logo.png" alt="Creature Comfort Logo">
+      <img src="logo.png" alt="Creature Comfort Logo" />
     </div>
     <nav class="main-nav">
-  <a href="index.html">Home</a>
-  <a href="myanimals.html">My Animals</a>
-  <a href="careguides.html">Care Guide</a>
-  <a href="survey.html">Survey</a>
+      <a href="index.html">Home</a>
+      <a href="myanimals.html">My Animals</a>
+      <a href="careguides.html">Care Guide</a>
+      <a href="survey.html">Survey</a>
     </nav>
 
     <button class="login-btn">Login</button>
@@ -32,49 +77,45 @@
 
     <!-- Search Bar -->
     <div class="search-bar">
-      <input type="text" placeholder="Search....">
+      <input type="text" placeholder="Search...." />
       <button class="search-btn">🔍</button>
     </div>
 
+    <!-- Animal grid (clean, single container) -->
     <div class="animal-grid">
-<div class="animal-grid">
-  <a class="animal-card" href="https://youtu.be/u2DDVm7MztE?si=LjK5IxGoFo5aGHKz" target="_blank">
-    <img src="snake.jpg" alt="Ball Python">
-    <p>Ball Python</p>
-  </a>
+      <a class="animal-card" href="https://youtu.be/u2DDVm7MztE?si=LjK5IxGoFo5aGHKz" target="_blank" rel="noopener">
+        <img src="snake.jpg" alt="Ball Python" />
+        <p>Ball Python</p>
+      </a>
 
-  <a class="animal-card" href="https://youtu.be/6vbYqhvP3Ds?si=nJAw_M09FKXgr2Rs" target="_blank">
-    <img src="fish1.jpg" alt="Betta Fish">
-    <p>Betta Fish</p>
-  </a>
+      <a class="animal-card" href="https://youtu.be/6vbYqhvP3Ds?si=nJAw_M09FKXgr2Rs" target="_blank" rel="noopener">
+        <img src="fish1.jpg" alt="Betta Fish" />
+        <p>Betta Fish</p>
+      </a>
 
-  <a class="animal-card" href="https://youtu.be/sctuy_arPMg?si=o569WX4-jMuHkh6V" target="_blank">
-    <img src="greycat.jpg" alt="Domestic Cat">
-    <p>Domestic Cat</p>
-  </a>
+      <a class="animal-card" href="https://youtu.be/sctuy_arPMg?si=o569WX4-jMuHkh6V" target="_blank" rel="noopener">
+        <img src="greycat.jpg" alt="Domestic Cat" />
+        <p>Domestic Cat</p>
+      </a>
 
-  <a class="animal-card" href="https://youtu.be/peUVLEUj-AM?si=DqtzNnPNV7t0N-fv" target="_blank">
-    <img src="labdog.jpg" alt="Dog">
-    <p>Dog</p>
-  </a>
+      <a class="animal-card" href="https://youtu.be/peUVLEUj-AM?si=DqtzNnPNV7t0N-fv" target="_blank" rel="noopener">
+        <img src="labdog.jpg" alt="Dog" />
+        <p>Dog</p>
+      </a>
 
-  <a class="animal-card" href="https://youtu.be/iessmEj4Xe0?si=PNk25m2_xu37Fjr2" target="_blank">
-    <img src="cornsnake.jpg" alt="Corn Snake">
-    <p>Corn Snake</p>
-  </a>
+      <a class="animal-card" href="https://youtu.be/iessmEj4Xe0?si=PNk25m2_xu37Fjr2" target="_blank" rel="noopener">
+        <img src="cornsnake.jpg" alt="Corn Snake" />
+        <p>Corn Snake</p>
+      </a>
 
-  <a class="animal-card" href="https://youtu.be/dgJBt3ERqqg?si=yypNNyIDgrXV6GOv" target="_blank">
-    <img src="leopardgecko.jpg" alt="Leopard Gecko">
-    <p>Leopard Gecko</p>
-  </a>
-</div>
-
-  </div>
-</div>
-
+      <a class="animal-card" href="https://youtu.be/dgJBt3ERqqg?si=yypNNyIDgrXV6GOv" target="_blank" rel="noopener">
+        <img src="leopardgecko.jpg" alt="Leopard Gecko" />
+        <p>Leopard Gecko</p>
+      </a>
+    </div>
 
     <!-- Pagination -->
-    <div class="pagination">
+    <div class="pagination" style="margin-top:24px;">
       <a href="#">1</a>
       <a href="#">2</a>
       <a href="#">3</a>
@@ -85,19 +126,35 @@
     </div>
   </section>
 
-<footer class="site-footer">
-  <div class="footer-left">
-    <img src="logo.png" alt="Creature Comfort Logo">
-  </div>
-  
-  <p>© 2025 CreatureComfort, Inc</p>
-  
-  <a href="mailto:info@creaturecomfort.com">Email Us :)</a>
-  <a href="#">Legal Stuff</a>
-  <a href="#">Privacy Policy</a>
-</footer>
+  <footer class="site-footer">
+    <div class="footer-left">
+      <img src="logo.png" alt="Creature Comfort Logo" />
+    </div>
+
+    <p>© 2025 CreatureComfort, Inc</p>
+
+    <a href="mailto:info@creaturecomfort.com">Email Us :)</a>
+    <a href="#">Legal Stuff</a>
+    <a href="#">Privacy Policy</a>
+  </footer>
+
+  <!-- optional JS fallback if anchor clicks are blocked by other scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.animal-card').forEach(card => {
+        // anchors will handle clicks — this is purely a fallback when card is clicked
+        // but the click target isn't the anchor (rare)
+        card.addEventListener('click', function(e) {
+          const anchor = card.closest('a') || card.querySelector('a[href]');
+          if (!anchor) return;
+          // if the native anchor already handled it (click on anchor), do nothing
+          if (e.target.closest('a')) return;
+          window.open(anchor.href, '_blank', 'noopener');
+        });
+      });
+    });
+  </script>
 
   <script src="slideshow.js"></script>
-
 </body>
 </html>
