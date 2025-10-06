@@ -499,3 +499,20 @@ h2 {
 .add-pet button:hover {
   background: #46785e;
 }
+.slides {
+  display: none;
+}
+
+.slideshow img {
+  width: 100%;
+  height: auto;
+}
+
+.fade {
+  animation: fadeEffect 1s;
+}
+
+@keyframes fadeEffect {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
