@@ -79,5 +79,66 @@
   <a href="#">Privacy Policy</a>
 </footer>
 
-<script src="slideshow.js"></script>
+// slideshow.js
+(function () {
+  function initSlideshow() {
+    const slides = Array.from(document.getElementsByClassName('slides'));
+    if (!slides.length) return; // nothing to do
+
+    let slideIndex = 0;
+    const delay = 4000;
+    let timer = null;
+
+    function hideAll() {
+      slides.forEach(s => {
+        s.style.display = 'none';
+      });
+    }
+
+    function showIndex(i) {
+      hideAll();
+      const idx = (i + slides.length) % slides.length;
+      slides[idx].style.display = 'block';
+      // add fade class so animation plays
+      slides[idx].classList.remove('fade');
+      // force reflow to restart animation
+      void slides[idx].offsetWidth;
+      slides[idx].classList.add('fade');
+      slideIndex = idx;
+    }
+
+    function next() {
+      showIndex(slideIndex + 1);
+    }
+
+    function start() {
+      stop();
+      timer = setInterval(next, delay);
+    }
+
+    function stop() {
+      if (timer) { clearInterval(timer); timer = null; }
+    }
+
+    // show the first slide right away
+    showIndex(0);
+    start();
+
+    // pause on hover/focus for better UX
+    const slideshowEl = document.querySelector('.slideshow');
+    if (slideshowEl) {
+      slideshowEl.addEventListener('mouseenter', stop);
+      slideshowEl.addEventListener('mouseleave', start);
+      slideshowEl.addEventListener('focusin', stop);
+      slideshowEl.addEventListener('focusout', start);
+    }
+
+    // expose for debugging
+    window.__cc_slideshow = { showIndex, next, stop, start, slidesCount: slides.length };
+  }
+
+  if (document.readyState !== 'loading') initSlideshow();
+  else document.addEventListener('DOMContentLoaded', initSlideshow);
+})();
+
 
