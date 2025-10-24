@@ -518,10 +518,13 @@ h2 {
 }
 
 /* ========================
-   Share buttons (Creature Comfort)
-   Add this at the end of styles.css
+   Share buttons (Creature Comfort - themed update)
    ======================== */
-.share-section { margin-top: 18px; text-align:center; }
+.share-section {
+  margin-top: 18px;
+  text-align: center;
+}
+
 .share-buttons {
   display: flex;
   gap: 10px;
@@ -530,27 +533,55 @@ h2 {
   align-items: center;
   margin-top: 8px;
 }
+
+/* Base button style */
 .btn {
-  padding: 8px 14px;
+  padding: 10px 18px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
   font-weight: 700;
-  font-family: var(--font-main);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  font-family: var(--font-main); /* matches site font */
+  font-size: 1rem;
+  color: #001f3f; /* navy blue text */
+  background-color: #fff; /* base white so colors show as border */
+  transition: background 0.25s ease, transform 0.1s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+/* Hover feedback */
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Teal (Facebook) button */
 .btn-facebook {
-  background-color: #1877f2;
-  color: #fff;
+  background-color: var(--teal);
+  border: 2px solid var(--teal);
+  color: #001f3f;
 }
+.btn-facebook:hover {
+  background-color: #46785e;
+  border-color: #46785e;
+}
+
+/* Orange (Twitter) button */
 .btn-twitter {
-  background-color: #1da1f2;
-  color: #fff;
+  background-color: var(--accent);
+  border: 2px solid var(--accent);
+  color: #001f3f;
+}
+.btn-twitter:hover {
+  background-color: #b47b27;
+  border-color: #b47b27;
 }
 
-/* Small screens: make buttons stack nicely */
+/* Responsive */
 @media (max-width: 480px) {
-  .btn { width: 48%; }
-  .share-buttons { gap: 8px; }
+  .btn {
+    width: 48%;
+  }
+  .share-buttons {
+    gap: 8px;
+  }
 }
-
