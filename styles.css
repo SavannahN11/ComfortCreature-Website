@@ -564,14 +564,18 @@ h2 {
 }
 
 /* Twitter (Orange) button */
+/* Ensure Twitter button text matches Facebook text color */
 .btn-twitter {
-  background-color: var(--accent);      /* exact accent (orange) */
+  background-color: var(--accent);   /* keeps orange background */
   border: 2px solid var(--accent);
-  color: var(--dark);                   /* text = site dark/navy */
+  color: var(--dark);                /* same text color as Facebook button */
 }
+
+/* Hover (keeps darker orange background; text stays the same color) */
 .btn-twitter:hover {
-  background-color: #b47b27;            /* darker orange for hover */
+  background-color: #b47b27;
   border-color: #b47b27;
+  color: var(--dark);
 }
 
 /* Responsive */
