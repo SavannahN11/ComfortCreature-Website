@@ -518,7 +518,7 @@ h2 {
 }
 
 /* ========================
-   Share buttons (Creature Comfort - themed - FINAL)
+   Share buttons (Creature Comfort - final color-correct version)
    ======================== */
 .share-section {
   margin-top: 18px;
@@ -541,11 +541,11 @@ h2 {
   border: none;
   cursor: pointer;
   font-weight: 700;
-  font-family: var(--font-main); /* uses site font */
+  font-family: var(--font-main);
   font-size: 1rem;
-  color: var(--dark); /* text matches site text color */
+  color: var(--dark); /* text uses site’s dark variable */
   transition: background 0.25s ease, transform 0.1s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .btn:hover {
@@ -554,32 +554,28 @@ h2 {
 
 /* Facebook (Teal) button */
 .btn-facebook {
-  background-color: var(--teal);
+  background-color: var(--teal);        /* exact teal from :root */
   border: 2px solid var(--teal);
-  color: var(--dark); /* navy text */
+  color: var(--dark);                   /* text = site dark/navy */
 }
 .btn-facebook:hover {
-  background-color: #46785e; /* darker teal */
+  background-color: #46785e;            /* darker teal tone for hover */
   border-color: #46785e;
 }
 
 /* Twitter (Orange) button */
 .btn-twitter {
-  background-color: var(--accent);
+  background-color: var(--accent);      /* exact accent (orange) */
   border: 2px solid var(--accent);
-  color: var(--dark); /* navy text */
+  color: var(--dark);                   /* text = site dark/navy */
 }
 .btn-twitter:hover {
-  background-color: #b47b27; /* darker orange */
+  background-color: #b47b27;            /* darker orange for hover */
   border-color: #b47b27;
 }
 
 /* Responsive */
 @media (max-width: 480px) {
-  .btn {
-    width: 48%;
-  }
-  .share-buttons {
-    gap: 8px;
-  }
+  .btn { width: 48%; }
+  .share-buttons { gap: 8px; }
 }
