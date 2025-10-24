@@ -567,8 +567,8 @@ h2 {
 
 /* Orange (Twitter) button */
 .btn-twitter {
-  background-color: var(--accent);
-  border: 2px solid var(--accent);
+  background-color: var(--teal);
+  border: 2px solid var(--teal);
   color: #c7d9d3;
 }
 .btn-twitter:hover {
