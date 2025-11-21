@@ -804,15 +804,15 @@ h2 {
 ======================== */
 .featured-pet {
   width: 100%;
-  max-width: 1060px;          /* wider than About for more presence */
-  margin: 1rem auto 2rem;     /* sits below the green strip */
   background: #fff;
-  padding: 2.25rem 2rem;      /* generous padding so it reads like a card */
-  border-radius: 12px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.08); /* stronger depth */
-  border: 0;                  /* remove thin top border if present */
-  position: relative;
+  padding: 2.5rem 2rem 3rem;
+  text-align: center;
+  margin: 2rem 0;
+  border-top: 8px solid var(--green-bg);
+  border-bottom: 8px solid var(--green-bg); /* optional — adds matching bottom bar */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
+
 
 /* Pull the heading up visually */
 .featured-pet h2 {
