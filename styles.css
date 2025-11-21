@@ -135,29 +135,36 @@ h2 {
 ======================== */
 .about {
   width: 100%;
+  max-width: 760px;           /* rectangle width */
+  margin: 1.2rem auto;        /* center on page with some gap */
   background: #fff;
-  padding: 1rem 1rem;        /* smaller height */
+  padding: 0.9rem 1rem;       /* much smaller vertical padding */
   text-align: center;
-  margin-bottom: 1rem;       /* tighter spacing below */
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.03);
 }
-
-.about p {
-  font-size: 1.1rem;         /* slightly smaller text */
-  max-width: 750px;          /* narrower for balance */
-}
-
 
 .about h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 1.25rem;         /* smaller heading */
+  margin: 0.25rem 0 0.6rem;
   color: var(--accent);
+  font-weight: 700;
 }
 
 .about p {
-  font-size: 1.25rem;
-  line-height: 1.8;
-  max-width: 900px;
+  font-size: 0.98rem;         /* smaller paragraph text */
+  line-height: 1.6;
+  max-width: 700px;
   margin: 0 auto;
+  color: var(--dark);
+}
+
+/* Optional subtle divider under About (small green strip) */
+.about + .section-gap {
+  height: 28px;
+  background: var(--green-bg);
+  width: 100%;
 }
 
 /* ========================
