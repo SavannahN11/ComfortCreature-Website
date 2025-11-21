@@ -816,6 +816,11 @@ h2 {
   box-shadow: 0 12px 30px rgba(0,0,0,0.08);
   border-radius: 8px;
 }
+.featured-pet {
+  border-radius: 8px; /* same as About Us */
+  overflow: hidden;   /* ensures the background and content follow the curve */
+}
+
 
 /* Inner container keeps the dog image + text nicely centered */
 .featured-content {
