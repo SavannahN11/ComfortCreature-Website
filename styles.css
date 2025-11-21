@@ -712,3 +712,56 @@ h2 {
   .modal-panel { margin: 4vh 12px; }
 }
 
+/* ---------- Homepage slideshow: size, layout, responsive ---------- */
+.slideshow {
+  max-width: 900px;        /* slightly smaller than full-width */
+  height: 420px;           /* slightly reduced height */
+  margin: 1.2rem auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Each slide is positioned on top of one another and faded in/out */
+.slideshow .slides {
+  position: absolute;
+  inset: 0;                /* shorthand for top/right/bottom/left:0 */
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 800ms ease-in-out;
+  -webkit-transition: opacity 800ms ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* visible slide */
+.slideshow .slides.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* ensure images cover the slide area nicely */
+.slideshow .slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* small screens: reduce height and allow near-full width */
+@media (max-width: 768px) {
+  .slideshow {
+    max-width: 95%;
+    height: 280px;
+  }
+}
+
+/* accessibility: if the user prefers reduced motion, disable transitions + autoplay in JS honors this */
+@media (prefers-reduced-motion: reduce) {
+  .slideshow .slides {
+    transition: none;
+  }
+}
