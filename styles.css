@@ -804,47 +804,79 @@ h2 {
 ======================== */
 .featured-pet {
   width: 100%;
+  max-width: 1060px;          /* wider than About for more presence */
+  margin: 1rem auto 2rem;     /* sits below the green strip */
   background: #fff;
-  padding: 2.5rem 1.5rem 3rem;  /* more top space, generous bottom */
-  text-align: center;
-  margin: 2rem auto;
-  border-top: 8px solid var(--green-bg);
+  padding: 2.25rem 2rem;      /* generous padding so it reads like a card */
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08); /* stronger depth */
+  border: 0;                  /* remove thin top border if present */
+  position: relative;
 }
 
+/* Pull the heading up visually */
 .featured-pet h2 {
   color: var(--accent);
-  font-size: 2.2rem;
-  margin-top: 0.2rem;           /* brings heading closer to the top */
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  margin: -0.4rem 0 1rem;     /* negative top margin pulls heading upward */
+  line-height: 1;
+  font-weight: 700;
 }
 
-/* make Skeeter's image larger */
+/* Layout: image left, text right; center the cluster */
+.featured-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  justify-content: center;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+/* Much larger image to make Featured Pet pop */
 .featured-image {
-  width: 240px;                 /* bigger image */
-  height: 240px;
-  border-radius: 12px;
+  width: 280px;
+  height: 280px;
+  border-radius: 14px;
   object-fit: cover;
-  border: 4px solid var(--teal);
+  border: 6px solid rgba(90,156,122,0.15); /* soft teal frame */
+  box-shadow: 0 8px 30px rgba(90,156,122,0.06);
+  flex: 0 0 280px;
 }
 
-/* adjust text so it aligns nicely with the bigger image */
+/* Text block tuned for the larger image */
+.featured-text {
+  max-width: 620px;
+  text-align: left;
+}
+
 .featured-text h3 {
   color: var(--teal);
   font-size: 1.6rem;
-  margin-bottom: 0.6rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
 }
 
 .featured-text p {
-  font-size: 1.15rem;
-  line-height: 1.8;
+  font-size: 1.12rem;
+  line-height: 1.75;
+  color: var(--dark);
+  margin: 0;
 }
 
+/* Ensure it stacks neatly on smaller screens */
+@media (max-width: 920px) {
+  .featured-content { flex-direction: column; text-align: center; gap: 1rem; }
+  .featured-text { text-align: center; }
+  .featured-image { width: 220px; height: 220px; flex: 0 0 220px; }
+  .featured-pet { padding: 1.5rem 1rem; max-width: 92%; }
+}
 
-/* Responsive: stack vertically on mobile */
-@media (max-width: 720px) {
-  .featured-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+@media (max-width: 480px) {
+  .about { padding: 0.8rem 0.9rem; max-width: 92%; }
+  .about h2 { font-size: 1.05rem; }
+  .about p { font-size: 0.95rem; }
+  .featured-image { width: 180px; height: 180px; flex: 0 0 180px; }
+  .featured-text h3 { font-size: 1.25rem; }
+  .featured-text p { font-size: 1rem; }
 }
