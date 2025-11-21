@@ -804,17 +804,17 @@ h2 {
 ======================== */
 /* Make Featured Pet full-bleed (edge-to-edge) while keeping inner content centered */
 /* Make Featured Pet full-bleed (edge-to-edge) while keeping inner content centered */
+/* Featured Pet spans same width as header content */
 .featured-pet {
-  position: relative;
-  left: 0;
-  width: 100vw;                           /* full viewport width */
-  margin-left: calc(50% - 50vw);          /* "break out" of centered container */
+  width: 100%;
+  max-width: 1200px;          /* same as header area */
+  margin: 2rem auto;
   background: #fff;
-  padding: 2.5rem 0;                      /* vertical padding; inner content dictates horizontal width */
+  padding: 2.5rem 2rem 3rem;
   border-top: 8px solid var(--green-bg);
-  border-bottom: 8px solid var(--green-bg); /* optional */
+  border-bottom: 8px solid var(--green-bg);
   box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  z-index: 0;
+  border-radius: 8px;
 }
 
 /* Inner container keeps the dog image + text nicely centered */
