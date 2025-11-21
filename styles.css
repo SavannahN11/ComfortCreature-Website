@@ -1,5 +1,3 @@
-
-
 /* ========================
    CSS Variables
 ======================== */
@@ -29,39 +27,60 @@ h2 {
 /* ========================
    Header
 ======================== */
-/* Fixed header so it never hides under browser chrome */
 .site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 84px;                 /* set to match your logo/header height */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 0.25rem 1rem;
   background: #fff;
   border-bottom: 3px solid #d3d3d3;
-  z-index: 9999;                /* keep it above other content */
 }
 
-/* Push page content down so it is not hidden under the fixed header */
-body {
-  padding-top: 84px;            /* should match .site-header height */
+.logo img {
+  height: 80px;
 }
 
-/* small screens: use a smaller header/padding */
-@media (max-width: 768px) {
-  .site-header { height: 68px; }
-  body { padding-top: 68px; }
+.main-nav {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
 }
 
-/* Optionally respect safe-area inset (notch / macOS safe area) */
-body {
-  padding-top: calc(84px + env(safe-area-inset-top));
+.main-nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: bold;
+  font-size: 1.2rem;
 }
-.site-header {
-  padding-top: env(safe-area-inset-top);
+
+.main-nav a::after {
+  content: "🐾";
+  display: block;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 0.3rem;
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+.main-nav a:hover {
+  color: var(--teal);
+}
+
+.login-btn {
+  background: #b5c7b5;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: var(--teal);
 }
 
 /* ========================
@@ -69,9 +88,8 @@ body {
 ======================== */
 .hero {
   text-align: center;
-  padding: 0.5rem 0; /* smaller top/bottom space */
+  padding: 2rem;
 }
-
 
 .slideshow {
   width: 60%;
@@ -212,10 +230,9 @@ body {
 .animal-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;             /* increased from 1.5rem → gives more breathing room */
-  max-width: 1100px;       /* optional: slightly wider to reduce squish */
-  margin: 2rem auto;       /* adds top/bottom space */
-  justify-items: center;   /* centers cards evenly */
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .animal-card {
@@ -693,6 +710,57 @@ body {
   .form-container, .form-page { padding: 14px; margin: 1rem; }
   .modal-panel { margin: 4vh 12px; }
 }
-.site-header {
-  margin-bottom: 0.5rem;
+
+/* ---------- Homepage slideshow: size, layout, responsive ---------- */
+.slideshow {
+  max-width: 900px;        /* slightly smaller than full-width */
+  height: 420px;           /* slightly reduced height */
+  margin: 1.2rem auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Each slide is positioned on top of one another and faded in/out */
+.slideshow .slides {
+  position: absolute;
+  inset: 0;                /* shorthand for top/right/bottom/left:0 */
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 800ms ease-in-out;
+  -webkit-transition: opacity 800ms ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* visible slide */
+.slideshow .slides.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* ensure images cover the slide area nicely */
+.slideshow .slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* small screens: reduce height and allow near-full width */
+@media (max-width: 768px) {
+  .slideshow {
+    max-width: 95%;
+    height: 280px;
+  }
+}
+
+/* accessibility: if the user prefers reduced motion, disable transitions + autoplay in JS honors this */
+@media (prefers-reduced-motion: reduce) {
+  .slideshow .slides {
+    transition: none;
+  }
 }
