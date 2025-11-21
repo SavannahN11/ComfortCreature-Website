@@ -90,8 +90,9 @@ h2 {
 ======================== */
 .hero {
   text-align: center;
-  padding: 1rem 0;      /* less vertical space */
+  padding: 0.5rem 0; /* smaller top/bottom space */
 }
+
 
 .slideshow {
   width: 60%;
