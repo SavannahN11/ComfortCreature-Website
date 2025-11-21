@@ -713,3 +713,6 @@ h2 {
   .form-container, .form-page { padding: 14px; margin: 1rem; }
   .modal-panel { margin: 4vh 12px; }
 }
+.site-header {
+  margin-bottom: 0.5rem;
+}
