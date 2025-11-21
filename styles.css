@@ -88,15 +88,16 @@ h2 {
 ======================== */
 .hero {
   text-align: center;
-  padding: 0.25rem 0;     /* much smaller top/bottom padding */
+  padding: 0.1rem 0;      /* very minimal top/bottom padding */
   background: var(--green-bg);
 }
 
 .hero h1 {
-  font-size: 1.4rem;      /* smaller “Welcome” text */
-  font-weight: bold;
-  margin-bottom: 0.4rem;  /* tighter gap before slideshow */
+  font-size: 1.1rem;      /* smaller welcome text */
+  font-weight: 600;
+  margin-bottom: 0.3rem;  /* smaller gap before slideshow */
 }
+
 
 .slideshow {
   width: 60%;
