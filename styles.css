@@ -29,60 +29,39 @@ h2 {
 /* ========================
    Header
 ======================== */
+/* Fixed header so it never hides under browser chrome */
 .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 84px;                 /* set to match your logo/header height */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.25rem 1rem;
+  padding: 0 1rem;
   background: #fff;
   border-bottom: 3px solid #d3d3d3;
+  z-index: 9999;                /* keep it above other content */
 }
 
-.logo img {
-  height: 80px;
+/* Push page content down so it is not hidden under the fixed header */
+body {
+  padding-top: 84px;            /* should match .site-header height */
 }
 
-.main-nav {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 2rem;
+/* small screens: use a smaller header/padding */
+@media (max-width: 768px) {
+  .site-header { height: 68px; }
+  body { padding-top: 68px; }
 }
 
-.main-nav a {
-  margin: 0 1rem;
-  text-decoration: none;
-  color: var(--dark);
-  font-weight: bold;
-  font-size: 1.2rem;
+/* Optionally respect safe-area inset (notch / macOS safe area) */
+body {
+  padding-top: calc(84px + env(safe-area-inset-top));
 }
-
-.main-nav a::after {
-  content: "🐾";
-  display: block;
-  font-size: 1rem;
-  text-align: center;
-  margin-top: 0.3rem;
-  color: var(--accent);
-  opacity: 0.8;
-}
-
-.main-nav a:hover {
-  color: var(--teal);
-}
-
-.login-btn {
-  background: #b5c7b5;
-  border: none;
-  padding: 0.8rem 1.6rem;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.login-btn:hover {
-  background-color: var(--teal);
+.site-header {
+  padding-top: env(safe-area-inset-top);
 }
 
 /* ========================
