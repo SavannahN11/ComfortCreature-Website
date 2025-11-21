@@ -802,16 +802,49 @@ h2 {
 /* ========================
    Featured Pet (same style as About Us)
 ======================== */
+/* Make Featured Pet full-bleed (edge-to-edge) while keeping inner content centered */
 .featured-pet {
-  width: 100%;
+  position: relative;
+  left: 0;
+  width: 100vw;                           /* full viewport width */
+  margin-left: calc(50% - 50vw);          /* "break out" of centered container */
   background: #fff;
-  padding: 2.5rem 2rem 3rem;
-  text-align: center;
-  margin: 2rem 0;
+  padding: 2.5rem 0;                      /* vertical padding; inner content dictates horizontal width */
   border-top: 8px solid var(--green-bg);
-  border-bottom: 8px solid var(--green-bg); /* optional — adds matching bottom bar */
+  border-bottom: 8px solid var(--green-bg); /* optional */
   box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  z-index: 0;
 }
+
+/* Inner container keeps the dog image + text nicely centered */
+.featured-content {
+  max-width: 1100px;    /* content width you want visible in center */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 1.5rem;    /* horizontal breathing room on very small screens */
+  box-sizing: border-box;
+}
+
+/* Larger image (already customized earlier) */
+.featured-image {
+  width: 320px;
+  height: 320px;
+  border-radius: 14px;
+  object-fit: cover;
+  border: 6px solid rgba(90,156,122,0.15);
+  box-shadow: 0 8px 30px rgba(90,156,122,0.06);
+  flex: 0 0 320px;
+}
+
+/* responsive stacking */
+@media (max-width: 920px) {
+  .featured-content { flex-direction: column; text-align: center; }
+  .featured-image { width: 240px; height: 240px; flex: 0 0 240px; }
+  .featured-pet { padding: 1.5rem 0; }
+}
+
 .featured-content {
   display: flex;
   align-items: center;
