@@ -1,14 +1,23 @@
 // slideshow.js
-let slideIndex = 0;
-showSlides();
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".slides");
+  if (!slides.length) return;
 
-function showSlides() {
-  const slides = document.getElementsByClassName("slides");
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+  let i = 0;
+  const delay = 4500; // time each slide stays visible (4.5s)
+  const fade = 600;   // must match CSS transition (0.6s)
+
+  slides[i].classList.add("active");
+
+  function nextSlide() {
+    const current = slides[i];
+    i = (i + 1) % slides.length;
+    const next = slides[i];
+
+    // fade current out, next in
+    next.classList.add("active");
+    setTimeout(() => current.classList.remove("active"), fade);
   }
-  slideIndex++;
-  if (slideIndex > slides.length) { slideIndex = 1 }
-  slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 2000); // Change image every 4 seconds
-}
+
+  setInterval(nextSlide, delay);
+});
