@@ -232,9 +232,10 @@ h2 {
 .animal-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  max-width: 1000px;
-  margin: 0 auto;
+  gap: 2.5rem;             /* increased from 1.5rem → gives more breathing room */
+  max-width: 1100px;       /* optional: slightly wider to reduce squish */
+  margin: 2rem auto;       /* adds top/bottom space */
+  justify-items: center;   /* centers cards evenly */
 }
 
 .animal-card {
