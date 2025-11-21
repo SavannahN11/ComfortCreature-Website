@@ -812,6 +812,16 @@ h2 {
   border-bottom: 8px solid var(--green-bg); /* optional — adds matching bottom bar */
   box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
+.featured-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  max-width: 1000px;    /* keeps content tidy while section spans full width */
+  margin: 0 auto;
+}
+
 
 
 /* Pull the heading up visually */
