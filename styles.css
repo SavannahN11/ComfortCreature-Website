@@ -798,52 +798,40 @@ h2 {
 .featured-pet {
   width: 100%;
   background: #fff;
-  padding: 1.8rem 1.5rem;
+  padding: 2.5rem 1.5rem 3rem;  /* more top space, generous bottom */
   text-align: center;
   margin: 2rem auto;
-  border-top: 6px solid var(--green-bg); /* little green gap */
+  border-top: 8px solid var(--green-bg);
 }
 
 .featured-pet h2 {
   color: var(--accent);
-  font-size: 2rem;
+  font-size: 2.2rem;
+  margin-top: 0.2rem;           /* brings heading closer to the top */
   margin-bottom: 1rem;
 }
 
-.featured-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
+/* make Skeeter's image larger */
 .featured-image {
-  width: 140px;
-  height: 140px;
-  border-radius: 10px;
+  width: 240px;                 /* bigger image */
+  height: 240px;
+  border-radius: 12px;
   object-fit: cover;
-  border: 3px solid var(--teal);
+  border: 4px solid var(--teal);
 }
 
-.featured-text {
-  max-width: 550px;
-  text-align: left;
-}
-
+/* adjust text so it aligns nicely with the bigger image */
 .featured-text h3 {
   color: var(--teal);
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  margin-bottom: 0.6rem;
 }
 
 .featured-text p {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: var(--dark);
+  font-size: 1.15rem;
+  line-height: 1.8;
 }
+
 
 /* Responsive: stack vertically on mobile */
 @media (max-width: 720px) {
